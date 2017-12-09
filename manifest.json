@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Insert Email",
+  "version": "0.0.1",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "description": "Adds an email address to a form input via a context menu",
+  "permissions": [
+    "activeTab",
+    "background",
+    "contextMenus"
+  ]
+}
