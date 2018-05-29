@@ -1,8 +1,16 @@
-function getIndex(arr, index) {
-  return arr.slice(index, index + 1)[0]
-}
-
-var hostParts = window.location.host.split(".")
-var hostname = getIndex(hostParts, -2)
-
-document.execCommand("insertText", false, hostname + "@mail.wtwf.com")
+chrome.storage.sync.get("items", function(items) {
+  items = items.items
+  var v = document.activeElement.value
+  var value = null
+  var first = null
+  items.forEach((item) => {
+    itemValue = eval(item)
+    value = value || itemValue
+    first = first || itemValue
+    if (v == itemValue) {
+      value = null
+    }
+  })
+  value = value || first
+  document.activeElement.value = value
+})

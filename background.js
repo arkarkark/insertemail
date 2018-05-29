@@ -1,15 +1,18 @@
-console.log("I'm a background page!")
+/* global chrome */
 
 function handleMenuClick() {
-  console.log("CLICKY!", arguments)
-  chrome.tabs.executeScript({file: 'content.js'});
+  chrome.tabs.executeScript({file: "content.js"});
 }
 
-
-var menu = chrome.contextMenus.create({
+chrome.contextMenus.create({
   id: "Add Email Address",
   title: "Add Email Address",
   contexts: ["editable"],
 })
 
 chrome.contextMenus.onClicked.addListener(handleMenuClick)
+chrome.commands.onCommand.addListener(function(command) {
+  if (command == "insert-email") {
+    chrome.tabs.executeScript({file: "content.js"});
+  }
+});

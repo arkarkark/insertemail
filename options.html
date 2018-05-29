@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insert Email</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+  <h1>Insert Email</h1>
+
+  <ul id="list">
+    <li id="add"><input placeholder="Add a new JavaScript expression here...">
+  </ul>
+
+  <button id="save">Save</button>
+
+  <p>Enter a javascript expression and click save to add it to the list of options inserted when you hit the insert email hotkey.</p>
+  <p>It's a JavaScript expression so if you want just a plain string you need to put it in quotes. e.g. <code>'mycommonusername'</code> or <code>"mycommonusername"</code>.</p>
+  <p> <code>window.location.host.split('.').slice(-2,-1)[0] + '@example.com'</code> will add the domain name of the current site plus @example.com. i.e. on amazon.com it would add amazon@exmaple.com.</p>
+
+  <script src="options.js"></script>
+</body>
+</html>
